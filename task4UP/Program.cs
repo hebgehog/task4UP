@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace task4UP
 {
@@ -12,33 +8,27 @@ namespace task4UP
         {
             double sum, i, e = 0, sl;
             Console.WriteLine("Введите точность e > 0 : ");
-            while (e <= 0)
-            {
+            while (e <= 0){
                 e = wwww();
                 if (e > 0)
                 {
                     sum = 0;
                     i = 1;
                     sl = 1 / (Math.Pow(4, i) + Math.Pow(5, i + 2));
-                    while (Math.Abs(sl) > e)
-                    {
+                    while (Math.Abs(sl) > e){
                         sum += sl;
                         i++;
                         sl = 1 / (Math.Pow(4, i) + Math.Pow(5, i + 2));
                     }
                     Console.WriteLine("Сумма ряда = " + sum);
                 }
-                else
-                {
-                    Console.WriteLine("Введите e больше нуля!");
-                }
+                else{Console.WriteLine("Введите e больше нуля!");}
             }
             Console.ReadKey();
         }
         static double wwww()
         {
-            while (true)
-            {
+            while (true){
                 double number;
                 if (double.TryParse(Console.ReadLine(), out number))
                     return number;
